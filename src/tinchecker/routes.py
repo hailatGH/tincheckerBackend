@@ -53,8 +53,8 @@ def get_all_tax_payers(tin):
             district=dict["LOCALITYDESC"],
             region=dict["PARISHNAME"],
             street_num=dict["STREETNO"],
-            tax_center_num=dict["TAXCENTRENO"][0],
-            telephone_num=dict["TELPHONE"][0],
+            tax_center_num=dict["TAXCENTRENO"],
+            telephone_num=dict["TELPHONE"],
             tax_payer_name=dict["TPNAME"],
             tax_payer_name_amh=dict["TPNAME_S"]
         )
@@ -87,8 +87,8 @@ def get_all_tax_payers(tin):
         tax_payer_data['district'] = tax_payer.district
         tax_payer_data['region'] = tax_payer.region
         tax_payer_data['street_num'] = tax_payer.street_num
-        tax_payer_data['tax_center_num']= tax_payer.tax_center_num[0],
-        tax_payer_data['telephone_num']= tax_payer.telephone_num[0],
+        tax_payer_data['tax_center_num']= tax_payer.tax_center_num,
+        tax_payer_data['telephone_num']= tax_payer.telephone_num,
         tax_payer_data['tax_payer_name'] = tax_payer.tax_payer_name
         tax_payer_data['tax_payer_name_amh'] = tax_payer.tax_payer_name_amh    
         output.append(tax_payer_data)

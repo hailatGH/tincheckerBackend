@@ -17,7 +17,9 @@ URL = "http://www.erca.gov.et:8008/wserca/index.jsf?tin="
 # API Routes
 @app.route('/tinchecker/<tin>', methods=['GET'])
 def get_all_tax_payers(tin):
-    tax_payers = TaxPayerInfo.query.filter(TaxPayerInfo.tin.contains(tin))
+    
+    if tin:
+        tax_payers = TaxPayerInfo.query.filter(TaxPayerInfo.tin.contains(tin))
 
     if not tax_payers:
         return jsonify({'message': 'No Tax Payer Found!'})
